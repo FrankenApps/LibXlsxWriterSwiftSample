@@ -20,6 +20,10 @@
 		95ABEB7C2485048100EFF9C7 /* hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ABEB7B2485048100EFF9C7 /* hello.swift */; };
 		95D929912486751B00425063 /* anatomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D929902486751B00425063 /* anatomy.swift */; };
 		95D929932486796100425063 /* demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D929922486796100425063 /* demo.swift */; };
+		95D929952486827B00425063 /* tutorial1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D929942486827B00425063 /* tutorial1.swift */; };
+		95D929972486895E00425063 /* tutorial2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D929962486895E00425063 /* tutorial2.swift */; };
+		95D9299A24868B2B00425063 /* tutorialStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9299924868B2B00425063 /* tutorialStruct.swift */; };
+		95D9299C24868CC100425063 /* tutorial3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9299B24868CC100425063 /* tutorial3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		95ABEB7B2485048100EFF9C7 /* hello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello.swift; sourceTree = "<group>"; };
 		95D929902486751B00425063 /* anatomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = anatomy.swift; sourceTree = "<group>"; };
 		95D929922486796100425063 /* demo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = demo.swift; sourceTree = "<group>"; };
+		95D929942486827B00425063 /* tutorial1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tutorial1.swift; sourceTree = "<group>"; };
+		95D929962486895E00425063 /* tutorial2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tutorial2.swift; sourceTree = "<group>"; };
+		95D9299924868B2B00425063 /* tutorialStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tutorialStruct.swift; sourceTree = "<group>"; };
+		95D9299B24868CC100425063 /* tutorial3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tutorial3.swift; sourceTree = "<group>"; };
 		C02464A41DAB9AD2EA3C9890 /* Pods_LibXlsxWriterSwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibXlsxWriterSwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,11 +134,23 @@
 		95ABEB7A248503A300EFF9C7 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				95D9299824868AFB00425063 /* Models */,
 				95ABEB7B2485048100EFF9C7 /* hello.swift */,
 				95D929902486751B00425063 /* anatomy.swift */,
 				95D929922486796100425063 /* demo.swift */,
+				95D929942486827B00425063 /* tutorial1.swift */,
+				95D929962486895E00425063 /* tutorial2.swift */,
+				95D9299B24868CC100425063 /* tutorial3.swift */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		95D9299824868AFB00425063 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95D9299924868B2B00425063 /* tutorialStruct.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B4B6998A2B680583B94B1432 /* Frameworks */ = {
@@ -256,12 +276,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				951A6CA2248651D000D21B68 /* LicensesPage.swift in Sources */,
+				95D9299C24868CC100425063 /* tutorial3.swift in Sources */,
 				95ABEB772484FFF100EFF9C7 /* ExampleListGenerator.swift in Sources */,
 				951A6CA024863F5000D21B68 /* ItemCodePage.swift in Sources */,
 				95ABEB732484FBE600EFF9C7 /* ExampleListPage.swift in Sources */,
 				95D929912486751B00425063 /* anatomy.swift in Sources */,
 				95ABEB5F2484FA9C00EFF9C7 /* AppDelegate.swift in Sources */,
 				95ABEB612484FA9C00EFF9C7 /* SceneDelegate.swift in Sources */,
+				95D9299A24868B2B00425063 /* tutorialStruct.swift in Sources */,
+				95D929952486827B00425063 /* tutorial1.swift in Sources */,
+				95D929972486895E00425063 /* tutorial2.swift in Sources */,
 				95ABEB7C2485048100EFF9C7 /* hello.swift in Sources */,
 				95D929932486796100425063 /* demo.swift in Sources */,
 				95ABEB752484FE8300EFF9C7 /* Example.swift in Sources */,

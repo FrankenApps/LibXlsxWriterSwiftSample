@@ -116,6 +116,174 @@ class ExampleListGenerator {
                                   generateFunction: Demo().generate)
         exampleList.append(demoExample)
         
+        let tutorial01 = Example(id: 3,
+                             title: "tutorial1.swift",
+                             subtitle: "Tutorial 1 from the documentation",
+                             code: """
+                             // Some data we want to write to the worksheet.
+                             struct Expense {
+                                 let item: String!
+                                 let cost: Double!
+                             }
+
+                             ...
+
+                             let expenses = [
+                                 Expense(item: "Rent", cost: 1000),
+                                 Expense(item: "Gas", cost: 100),
+                                 Expense(item: "Food", cost: 300),
+                                 Expense(item: "Gym", cost: 50),
+                             ]
+
+                             ...
+
+                             let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                              let fileURL = documentDirectory.appendingPathComponent("tutorial01.xlsx")
+                              
+                              //Create a new workbook.
+                              //Ditch first 6 characters, because they are of the form file://
+                              let workbook = workbook_new((fileURL.absoluteString.dropFirst(6) as NSString).fileSystemRepresentation)
+                             
+                              let worksheet = workbook_add_worksheet(workbook, nil)
+                              //Start from the first cell. Rows and columns are zero indexed.
+                              var row = 0
+                              let col = 0
+                              //Iterate over the data and write it out element by element.
+                              for row in (0...3).reversed() {
+                                  worksheet_write_string(worksheet, lxw_row_t(row), lxw_col_t(col),     expenses[row].item, nil)
+                                  worksheet_write_number(worksheet, lxw_row_t(row), lxw_col_t(col + 1), expenses[row].cost, nil)
+                              }
+                              row = 4
+
+                              //Write a total using a formula.
+                              worksheet_write_string (worksheet, lxw_row_t(row), lxw_col_t(col), "Total", nil)
+                              worksheet_write_formula(worksheet, lxw_row_t(row), lxw_col_t(col + 1), "=SUM(B1:B4)", nil)
+                              workbook_close(workbook)
+                             """,
+                             generateFunction: Tutorial1().generate)
+        exampleList.append(tutorial01)
+        
+        let tutorial02 = Example(id: 4,
+                                 title: "tutorial2.swift",
+                                 subtitle: "Tutorial 2 from the documentation",
+                                 code: """
+                                 // Some data we want to write to the worksheet.
+                                 struct Expense {
+                                     let item: String!
+                                     let cost: Double!
+                                 }
+
+                                 ...
+
+                                 let expenses = [
+                                     Expense(item: "Rent", cost: 1000),
+                                     Expense(item: "Gas", cost: 100),
+                                     Expense(item: "Food", cost: 300),
+                                     Expense(item: "Gym", cost: 50),
+                                 ]
+
+                                 ...
+
+                                  let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                                  let fileURL = documentDirectory.appendingPathComponent("tutorial02.xlsx")
+                                  
+                                  //Create a new workbook.
+                                  //Ditch first 6 characters, because they are of the form file://
+                                  let workbook = workbook_new((fileURL.absoluteString.dropFirst(6) as NSString).fileSystemRepresentation)
+                                 
+                                  let worksheet = workbook_add_worksheet(workbook, nil)
+                                  
+                                  //Add a bold format to use to highlight cells
+                                  let bold = workbook_add_format(workbook)
+                                  format_set_bold(bold);
+                                  //Add a number format for cells with money.
+                                  let money = workbook_add_format(workbook)
+                                  format_set_num_format(money, "$#,##0")
+                                  
+                                  //Write some data header.
+                                  worksheet_write_string(worksheet, 0, 0, "Item", bold)
+                                  worksheet_write_string(worksheet, 0, 1, "Cost", bold)
+                                  
+                                  //Start from the first cell. Rows and columns are zero indexed.
+                                  var row = 0
+                                  let col = 0
+                                  //Iterate over the data and write it out element by element.
+                                  for row in (0...3).reversed() {
+                                      //Write from the first cell below the headers.
+                                      worksheet_write_string(worksheet, lxw_row_t(row+1), lxw_col_t(col),     expenses[row].item, nil)
+                                      worksheet_write_number(worksheet, lxw_row_t(row+1), lxw_col_t(col + 1), expenses[row].cost, money)
+                                  }
+                                  row = 5
+
+                                  //Write a total using a formula.
+                                  worksheet_write_string (worksheet, lxw_row_t(row), lxw_col_t(col), "Total", bold)
+                                  worksheet_write_formula(worksheet, lxw_row_t(row), lxw_col_t(col + 1), "=SUM(B1:B4)", money)
+                                  workbook_close(workbook)
+                                 """,
+                                 generateFunction: Tutorial2().generate)
+        exampleList.append(tutorial02)
+        
+        let tutorial03 = Example(id: 5,
+                                 title: "tutorial3.swift",
+                                 subtitle: "Tutorial 3 from the documentation",
+                                 code: """
+                                 // Some data we want to write to the worksheet.
+                                 struct Expense {
+                                     let item: String!
+                                     let cost: Double!
+                                     let datetime: lxw_datetime!
+                                 }
+
+                                 ...
+
+                                 let expenses = [
+                                     Expense(item: "Rent", cost: 1000, datetime: lxw_datetime(year: 2013, month: 1, day: 13, hour: 0, min: 0, sec: 0.0)),
+                                     Expense(item: "Gas", cost: 100, datetime: lxw_datetime(year: 2013, month: 1, day: 14, hour: 0, min: 0, sec: 0.0)),
+                                     Expense(item: "Food", cost: 300, datetime: lxw_datetime(year: 2013, month: 1, day: 16, hour: 0, min: 0, sec: 0.0)),
+                                     Expense(item: "Gym", cost: 50, datetime: lxw_datetime(year: 2013, month: 1, day: 20, hour: 0, min: 0, sec: 0.0)),
+                                 ]
+
+                                 ...
+
+                                  let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                                  let fileURL = documentDirectory.appendingPathComponent("tutorial02.xlsx")
+                                  
+                                  //Create a new workbook.
+                                  //Ditch first 6 characters, because they are of the form file://
+                                  let workbook = workbook_new((fileURL.absoluteString.dropFirst(6) as NSString).fileSystemRepresentation)
+                                 
+                                  let worksheet = workbook_add_worksheet(workbook, nil)
+                                  
+                                  //Add a bold format to use to highlight cells
+                                  let bold = workbook_add_format(workbook)
+                                  format_set_bold(bold);
+                                  //Add a number format for cells with money.
+                                  let money = workbook_add_format(workbook)
+                                  format_set_num_format(money, "$#,##0")
+                                  
+                                  //Write some data header.
+                                  worksheet_write_string(worksheet, 0, 0, "Item", bold)
+                                  worksheet_write_string(worksheet, 0, 1, "Cost", bold)
+                                  
+                                  //Start from the first cell. Rows and columns are zero indexed.
+                                  var row = 0
+                                  let col = 0
+                                  //Iterate over the data and write it out element by element.
+                                  for row in (0...3).reversed() {
+                                      //Write from the first cell below the headers.
+                                      worksheet_write_string(worksheet, lxw_row_t(row+1), lxw_col_t(col),     expenses[row].item, nil)
+                                      worksheet_write_number(worksheet, lxw_row_t(row+1), lxw_col_t(col + 1), expenses[row].cost, money)
+                                  }
+                                  row = 5
+
+                                  //Write a total using a formula.
+                                  worksheet_write_string (worksheet, lxw_row_t(row), lxw_col_t(col), "Total", bold)
+                                  worksheet_write_formula(worksheet, lxw_row_t(row), lxw_col_t(col + 1), "=SUM(B1:B4)", money)
+                                  workbook_close(workbook)
+                                 """,
+                                 generateFunction: Tutorial3().generate)
+        exampleList.append(tutorial03)
+        
         return exampleList
     }
 }
