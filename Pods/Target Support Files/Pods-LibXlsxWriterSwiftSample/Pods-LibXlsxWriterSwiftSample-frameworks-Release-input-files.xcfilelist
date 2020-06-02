@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-LibXlsxWriterSwiftSample/Pods-LibXlsxWriterSwiftSample-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Sourceful/Sourceful.framework
+${BUILT_PRODUCTS_DIR}/libxlsxwriter/xlsxwriter.framework
