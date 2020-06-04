@@ -1,9 +1,9 @@
 # LibXlsxWriterSwiftSample
-This repository contains a Xcode example project showing how to use the libxlsxwriter CocoaPod with Swift for iOS.
+This repository contains a Xcode example project showing how to use the libxlsxwriter [CocoaPod](https://cocoapods.org/pods/libxlsxwriter) with Swift for iOS.
 
 ## Goal of this Repository
-While using most of the c API from Swift is pretty straight forward, in some cases there are some modifications needed, in order to get everything working together.
-This repository aims to provide some examples on how to deal with such cases in Swift 5.
+While using most of the C API from Swift is pretty straight forward, in some cases there are some modifications needed, in order to get everything working together.
+This repository aims to provide some examples on how to deal with such cases in Swift 5. These examples are based on the examples provided for the original C library, that can be found [here](https://libxlsxwriter.github.io/examples.html).
 
 ## Basic Setup
 If you want to use this Pod in your own project, all you have to do is to add this

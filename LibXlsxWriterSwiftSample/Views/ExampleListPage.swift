@@ -142,10 +142,8 @@ class ExampleListPage: UITableViewController, QLPreviewControllerDelegate {
         self.present(activityViewController, animated: true)
         
         activityViewController.completionWithItemsHandler = { activity, completed, items, error in
-            if !completed {
-                // handle task not completed
-            }
             self.removeTemporaryFile(fileUrl: fileUrl)
+            self.dismiss(animated: false, completion: nil) //File needs to be recreated; reflect in UI
         }
     }
     
