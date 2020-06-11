@@ -36,3 +36,8 @@ class Hello{
         return fileURL
     }
 }
+```
+
+## Only run sample app
+You can test the sample app right in your browser [here](https://appetize.io/app/27dm506k4fjk2p0t0ct79yxu4g?device=iphone8&scale=75&orientation=portrait&osVersion=13.3) but the emulator does not support previewing the generated excel files.
+I will soon add a .ipa file, that can be installed on your physical device, using for example [AltStore](https://github.com/rileytestut/AltStore).
