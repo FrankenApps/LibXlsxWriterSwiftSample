@@ -373,6 +373,157 @@ class ExampleListGenerator {
                                               generateFunction: FormatNumFormat().generate)
         exampleList.append(formatNumFormatExpample)
         
+        let datesAndTimes01 = Example(id: 8,
+                                      title: "dates_and_times01.swift",
+                                      subtitle: "Writing dates and times with numbers",
+                                      code: """
+                                      //A number to display as a date.
+                                      let number = 41333.5
+                                      
+                                      let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                                      let fileURL = documentDirectory.appendingPathComponent("date_and_times01.xlsx")
+                                      
+                                      let workbook = workbook_new((fileURL.absoluteString.dropFirst(6) as NSString).fileSystemRepresentation)
+                                      let worksheet = workbook_add_worksheet(workbook, nil)
+                                      //Add a format with date formatting.
+                                      let format = workbook_add_format(workbook)
+                                      format_set_num_format(format, "mmm d yyyy hh:mm AM/PM")
+                                      //Widen the first column to make the text clearer.
+                                      worksheet_set_column(worksheet, 0, 0, 20, nil)
+                                      //Write the number without formatting.
+                                      worksheet_write_number(worksheet, 0, 0, number, nil)  // 41333.5
+                                      /* Write the number with formatting. Note: the worksheet_write_datetime()
+                                       * function is preferable for writing dates and times. This is for
+                                       * demonstration purposes only.
+                                       */
+                                      worksheet_write_number(worksheet, 1, 0, number, format)   // Feb 28 2013 12:00 PM
+
+                                      workbook_close(workbook)
+                                      """,
+                                      generateFunction: DatesAndTimes01().generate)
+        exampleList.append(datesAndTimes01)
+        
+        let datesAndTimes02 = Example(id: 9,
+                                      title: "dates_and_times02.swift",
+                                      subtitle: "Writing dates and times with datetime",
+                                      code: """
+                                      //A number to display as a date.
+                                      var datetime = lxw_datetime(year: 2013, month: 2, day: 28, hour: 12, min: 0, sec: 0.0)
+                                      
+                                      let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                                      let fileURL = documentDirectory.appendingPathComponent("date_and_times02.xlsx")
+                                      
+                                      let workbook = workbook_new((fileURL.absoluteString.dropFirst(6) as NSString).fileSystemRepresentation)
+                                      let worksheet = workbook_add_worksheet(workbook, nil)
+
+                                      //Add a format with date formatting.
+                                      let format = workbook_add_format(workbook)
+                                      format_set_num_format(format, "mmm d yyyy hh:mm AM/PM")
+                                      //Widen the first column to make the text clearer.
+                                      worksheet_set_column(worksheet, 0, 0, 20, nil)
+                                      //Write the datetime without formatting.
+                                      worksheet_write_datetime(worksheet, 0, 0, &datetime, nil)  // 41333.5
+                                      //Write the datetime with formatting.
+                                      worksheet_write_datetime(worksheet, 1, 0, &datetime, format)  // Feb 28 2013 12:00 PM
+
+                                      workbook_close(workbook)
+                                      """,
+                                      generateFunction: DatesAndTimes02().generate)
+        exampleList.append(datesAndTimes02)
+        
+        let datesAndTimes03 = Example(id: 10,
+                                      title: "dates_and_times_03.swift",
+                                      subtitle: "Dates and times with different formats",
+                                      code: """
+                                      //A number to display as a date.
+                                      var datetime = lxw_datetime(year: 2013, month: 1, day: 23, hour: 12, min: 30, sec: 5.123)
+                                      
+                                      //Examples date and time formats. In the output file compare how changing the format strings changes the appearance of the date.
+                                      let date_formats = [
+                                          "dd/mm/yy",
+                                          "mm/dd/yy",
+                                          "dd m yy",
+                                          "d mm yy",
+                                          "d mmm yy",
+                                          "d mmmm yy",
+                                          "d mmmm yyy",
+                                          "d mmmm yyyy",
+                                          "dd/mm/yy hh:mm",
+                                          "dd/mm/yy hh:mm:ss",
+                                          "dd/mm/yy hh:mm:ss.000",
+                                          "hh:mm",
+                                          "hh:mm:ss",
+                                          "hh:mm:ss.000",
+                                      ]
+                                      
+                                      let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                                      let fileURL = documentDirectory.appendingPathComponent("date_and_times03.xlsx")
+                                      
+                                      let workbook = workbook_new((fileURL.absoluteString.dropFirst(6) as NSString).fileSystemRepresentation)
+                                      let worksheet = workbook_add_worksheet(workbook, nil)
+
+                                      //Add a bold format.
+                                      let bold = workbook_add_format(workbook)
+                                      format_set_bold(bold)
+                                      //Write the column headers.
+                                      worksheet_write_string(worksheet, 0, 0, "Formatted date", bold)
+                                      worksheet_write_string(worksheet, 0, 1, "Format", bold)
+                                      //Widen the first column to make the text clearer.
+                                      worksheet_set_column(worksheet, 0, 1, 20, nil)
+                                      //Write the same date and time using each of the above formats.
+                                      var row = 0
+                                      for i in 0..<14 {
+                                          row+=1
+                                          //Create a format for the date or time.
+                                          let format  = workbook_add_format(workbook)
+                                          format_set_num_format(format, date_formats[i])
+                                          format_set_align(format, UInt8(LXW_ALIGN_LEFT.rawValue))
+                                          //Write the datetime with each format.
+                                          worksheet_write_datetime(worksheet, lxw_row_t(row), 0, &datetime, format)
+                                          //Also write the format string for comparison
+                                          worksheet_write_string(worksheet, lxw_row_t(row), 1, date_formats[i], nil)
+                                      }
+
+                                      workbook_close(workbook)
+                                      """,
+                                      generateFunction: DatesAndTimes03().generate)
+        exampleList.append(datesAndTimes03)
+        
+        let hyperlinks = Example(id: 11,
+                                 title: "hyperlinks.swift",
+                                 subtitle: "A example of writing urls/hyperlinks",
+                                 code: """
+                                 let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                                 let fileURL = documentDirectory.appendingPathComponent("hyperlinks.xlsx")
+                                 
+                                 let workbook = workbook_new((fileURL.absoluteString.dropFirst(6) as NSString).fileSystemRepresentation)
+                                 let worksheet = workbook_add_worksheet(workbook, nil)
+                                 //Get the default url format (used in the overwriting examples below).
+                                 let url_format = workbook_get_default_url_format(workbook)
+                                 //Create a user defined link format.
+                                 let red_format = workbook_add_format(workbook)
+                                 format_set_underline (red_format, UInt8(LXW_UNDERLINE_SINGLE.rawValue))
+                                 format_set_font_color(red_format, LXW_COLOR_RED.rawValue)
+                                 //Widen the first column to make the text clearer.
+                                 worksheet_set_column(worksheet, 0, 0, 30, nil)
+                                 //Write a hyperlink. A default blue underline will be used if the format is NULL.
+                                 worksheet_write_url(worksheet, 0, 0, "http://libxlsxwriter.github.io", nil)
+                                 //Write a hyperlink but overwrite the displayed string. Note, we need to specify the format for the string to match the default hyperlink.
+                                 worksheet_write_url   (worksheet, 2, 0, "http://libxlsxwriter.github.io", nil)
+                                 worksheet_write_string(worksheet, 2, 0, "Read the documentation.", url_format)
+                                 //Write a hyperlink with a different format.
+                                 worksheet_write_url(worksheet,    4, 0, "http://libxlsxwriter.github.io", red_format)
+                                 //Write a mail hyperlink.
+                                 worksheet_write_url   (worksheet, 6, 0, "mailto:jmcnamara@cpan.org", nil)
+                                 //Write a mail hyperlink and overwrite the displayed string. We again specify the format for the string to match the default hyperlink.
+                                 worksheet_write_url   (worksheet, 8, 0, "mailto:jmcnamara@cpan.org", nil)
+                                 worksheet_write_string(worksheet, 8, 0, "Drop me a line.", url_format)
+                                 //Close the workbook, save the file and free any memory.
+                                 workbook_close(workbook)
+                                 """,
+                                 generateFunction: Hyperlinks().generate)
+        exampleList.append(hyperlinks)
+        
         return exampleList
     }
 }

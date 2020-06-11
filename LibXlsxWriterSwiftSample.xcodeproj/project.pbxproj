@@ -10,6 +10,9 @@
 		2AEE6EE692306D361ECB16F5 /* Pods_LibXlsxWriterSwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02464A41DAB9AD2EA3C9890 /* Pods_LibXlsxWriterSwiftSample.framework */; };
 		951A6CA024863F5000D21B68 /* ItemCodePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A6C9F24863F5000D21B68 /* ItemCodePage.swift */; };
 		951A6CA2248651D000D21B68 /* LicensesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A6CA1248651D000D21B68 /* LicensesPage.swift */; };
+		9534F401248D15E5002DBDC7 /* dates_and_times01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534F400248D15E5002DBDC7 /* dates_and_times01.swift */; };
+		9534F403248D1757002DBDC7 /* dates_and_times02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534F402248D1757002DBDC7 /* dates_and_times02.swift */; };
+		9534F405248D1908002DBDC7 /* dates_and_times03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534F404248D1908002DBDC7 /* dates_and_times03.swift */; };
 		955BDA152489348800E03F3C /* format_font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BDA142489348800E03F3C /* format_font.swift */; };
 		955BDA172489364C00E03F3C /* format_num_format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BDA162489364C00E03F3C /* format_num_format.swift */; };
 		95ABEB5F2484FA9C00EFF9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ABEB5E2484FA9C00EFF9C7 /* AppDelegate.swift */; };
@@ -26,6 +29,7 @@
 		95D929972486895E00425063 /* tutorial2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D929962486895E00425063 /* tutorial2.swift */; };
 		95D9299A24868B2B00425063 /* tutorialStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9299924868B2B00425063 /* tutorialStruct.swift */; };
 		95D9299C24868CC100425063 /* tutorial3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9299B24868CC100425063 /* tutorial3.swift */; };
+		95E002B724923895001A4098 /* hyperlinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E002B624923895001A4098 /* hyperlinks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,9 @@
 		730F6F13688504B0CC9D2209 /* Pods-LibXlsxWriterSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibXlsxWriterSwiftSample.release.xcconfig"; path = "Target Support Files/Pods-LibXlsxWriterSwiftSample/Pods-LibXlsxWriterSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 		951A6C9F24863F5000D21B68 /* ItemCodePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCodePage.swift; sourceTree = "<group>"; };
 		951A6CA1248651D000D21B68 /* LicensesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesPage.swift; sourceTree = "<group>"; };
+		9534F400248D15E5002DBDC7 /* dates_and_times01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dates_and_times01.swift; sourceTree = "<group>"; };
+		9534F402248D1757002DBDC7 /* dates_and_times02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dates_and_times02.swift; sourceTree = "<group>"; };
+		9534F404248D1908002DBDC7 /* dates_and_times03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dates_and_times03.swift; sourceTree = "<group>"; };
 		955BDA142489348800E03F3C /* format_font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = format_font.swift; sourceTree = "<group>"; };
 		955BDA162489364C00E03F3C /* format_num_format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = format_num_format.swift; sourceTree = "<group>"; };
 		95ABEB5B2484FA9C00EFF9C7 /* LibXlsxWriterSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibXlsxWriterSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +58,7 @@
 		95D929962486895E00425063 /* tutorial2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tutorial2.swift; sourceTree = "<group>"; };
 		95D9299924868B2B00425063 /* tutorialStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tutorialStruct.swift; sourceTree = "<group>"; };
 		95D9299B24868CC100425063 /* tutorial3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tutorial3.swift; sourceTree = "<group>"; };
+		95E002B624923895001A4098 /* hyperlinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hyperlinks.swift; sourceTree = "<group>"; };
 		C02464A41DAB9AD2EA3C9890 /* Pods_LibXlsxWriterSwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibXlsxWriterSwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -147,6 +155,10 @@
 				95D9299B24868CC100425063 /* tutorial3.swift */,
 				955BDA142489348800E03F3C /* format_font.swift */,
 				955BDA162489364C00E03F3C /* format_num_format.swift */,
+				9534F400248D15E5002DBDC7 /* dates_and_times01.swift */,
+				9534F402248D1757002DBDC7 /* dates_and_times02.swift */,
+				9534F404248D1908002DBDC7 /* dates_and_times03.swift */,
+				95E002B624923895001A4098 /* hyperlinks.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -288,12 +300,16 @@
 				951A6CA024863F5000D21B68 /* ItemCodePage.swift in Sources */,
 				95ABEB732484FBE600EFF9C7 /* ExampleListPage.swift in Sources */,
 				95D929912486751B00425063 /* anatomy.swift in Sources */,
+				9534F401248D15E5002DBDC7 /* dates_and_times01.swift in Sources */,
+				95E002B724923895001A4098 /* hyperlinks.swift in Sources */,
+				9534F403248D1757002DBDC7 /* dates_and_times02.swift in Sources */,
 				95ABEB5F2484FA9C00EFF9C7 /* AppDelegate.swift in Sources */,
 				95ABEB612484FA9C00EFF9C7 /* SceneDelegate.swift in Sources */,
 				95D9299A24868B2B00425063 /* tutorialStruct.swift in Sources */,
 				95D929952486827B00425063 /* tutorial1.swift in Sources */,
 				95D929972486895E00425063 /* tutorial2.swift in Sources */,
 				955BDA152489348800E03F3C /* format_font.swift in Sources */,
+				9534F405248D1908002DBDC7 /* dates_and_times03.swift in Sources */,
 				95ABEB7C2485048100EFF9C7 /* hello.swift in Sources */,
 				95D929932486796100425063 /* demo.swift in Sources */,
 				95ABEB752484FE8300EFF9C7 /* Example.swift in Sources */,

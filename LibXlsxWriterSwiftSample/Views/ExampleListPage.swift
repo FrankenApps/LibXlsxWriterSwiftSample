@@ -33,6 +33,7 @@ class ExampleListPage: UITableViewController, QLPreviewControllerDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "none", for: indexPath)
         cell.accessoryType = .disclosureIndicator
+        cell.contentView.subviews.forEach({ $0.removeFromSuperview() }) //Very important!
         let currentItem = examples[indexPath.row]
         
         //StackView
@@ -47,6 +48,7 @@ class ExampleListPage: UITableViewController, QLPreviewControllerDelegate {
         //Title label
         let titleLabel = UILabel()
         titleLabel.text = currentItem.title
+        titleLabel.numberOfLines = 0
         titleLabel.font = .boldSystemFont(ofSize: 25)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(titleLabel)
@@ -55,6 +57,7 @@ class ExampleListPage: UITableViewController, QLPreviewControllerDelegate {
         let subTitleLabel = UILabel()
         subTitleLabel.text = currentItem.subtitle
         subTitleLabel.font = .systemFont(ofSize: 18)
+        subTitleLabel.numberOfLines = 0
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(subTitleLabel)
         
@@ -62,6 +65,7 @@ class ExampleListPage: UITableViewController, QLPreviewControllerDelegate {
             stackView.leftAnchor.constraint(equalTo: cell.contentView.leftAnchor, constant: 15),
             stackView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 5),
             stackView.heightAnchor.constraint(equalTo: cell.contentView.heightAnchor, constant: -5),
+            stackView.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor, constant: -15)
         ])
         return cell
     }
