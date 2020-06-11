@@ -30,7 +30,7 @@ Libxlsxwriter Swift Samples are released under a FreeBSD license:
     official policies, either expressed or implied, of the FreeBSD Project.
 
 
-Libxlsxwriter Cocoa Examples includes examples from the libxlsxwriter library that are released under a FreeBSD license:
+Libxlsxwriter Swift Samples are based on the examples from the libxlsxwriter library which are released under a FreeBSD license:
 
     Copyright 2014-2020, John McNamara <jmcnamara@cpan.org>
     All rights reserved.
