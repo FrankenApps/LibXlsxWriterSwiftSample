@@ -5,6 +5,9 @@ This repository contains a Xcode example project showing how to use the libxlsxw
 While using most of the C API from Swift is pretty straight forward, in some cases there are some modifications needed, in order to get everything working together.
 This repository aims to provide some examples on how to deal with such cases in Swift 5. These examples are based on the examples provided for the original C library, that can be found [here](https://libxlsxwriter.github.io/examples.html).
 
+## Screencast
+![Screencast](https://raw.githubusercontent.com/FrankenApps/LibXlsxWriterSwiftSample/master/AdditionalAssets/screencast_edited.gif "A Screencast")
+
 ## Basic Setup
 If you want to use this Pod in your own project, all you have to do is to add this
 ```
@@ -40,4 +43,5 @@ class Hello{
 
 ## Only run sample app
 You can test the sample app right in your browser [here](https://appetize.io/app/27dm506k4fjk2p0t0ct79yxu4g?device=iphone8&scale=75&orientation=portrait&osVersion=13.3) but the emulator does not support previewing the generated excel files.
+
 I will soon add a .ipa file, that can be installed on your physical device, using for example [AltStore](https://github.com/rileytestut/AltStore).
