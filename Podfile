@@ -6,7 +6,7 @@ target 'LibXlsxWriterSwiftSample' do
   use_frameworks!
 
   # Pods for LibXlsxWriterSwiftSample
-  pod 'libxlsxwriter', '~> 0.9'
+  pod 'libxlsxwriter', '~> 1.1'
   pod 'Sourceful', '~> 0.2' #Only present for synzax highlighting
   
 end

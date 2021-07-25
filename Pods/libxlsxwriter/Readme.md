@@ -21,7 +21,8 @@ It supports features such as:
 - Autofilters.
 - Charts.
 - Data validation and drop down lists.
-- Worksheet PNG/JPEG images.
+- Conditional formatting.
+- Worksheet PNG/JPEG/GIF images.
 - Cell comments.
 - Support for adding Macros.
 - Memory optimization mode for writing large files.
